@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 常量名可以从struts-core包下org.apache.struts2 下default.properties下查看 -->
+	<!-- 配置启用动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<!-- 需要继承自struts-default 执行默认的拦截器 -->
+	<package name="basePakage" namespace="/" extends="struts-default">
+		<!-- 配置action 默认method是excute可以不配置 -->
+		<action name="helloAction_*" class="com.lt.action.HelloAction" method="{1}">
+			 <result name="success">index.jsp</result>
+		</action>
+	</package>
+</struts>
